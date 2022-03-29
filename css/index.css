@@ -1,0 +1,125 @@
+#main {
+    background-image: url("https://abuzar-cpu.github.io/portfolio/static/media/background.53aad14399d58d878e52.jpg");
+    min-height: calc(100vh - 106px);
+}
+
+.active {
+    color: #4883ff !important;
+}
+
+#banner {
+    position: relative;
+}
+
+#banner-image {
+    filter: brightness(60%);
+}
+
+#banner-text {
+    color: white;
+    position: absolute;
+    /* font-weight: bold; */
+    top: 200px;
+}
+
+#banner-contact-us:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.btn{
+    background-color: #4883ff;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: white;
+}
+
+
+.product-button:hover {
+    background-color: transparent;
+    color: #4883ff;
+}
+
+.about-us-button:hover {
+    background-color: transparent;
+    color: #4883ff;
+}
+
+.car-image {
+    transition: all 0.5s;
+    filter: brightness(50%);
+}
+
+.car-image:hover {
+    filter: brightness(90%);
+}
+
+.car-image-container {
+    position: relative;
+}
+
+.car-props {
+    position: absolute;
+    top: 10px;
+    color: white;
+    left: 10px
+}
+
+/* Social Links */
+
+.bi{
+    transition: all 0.5s;
+}
+
+.bi-facebook:hover {
+    color: #23527c;
+    cursor: pointer;
+}
+
+.bi-twitter:hover {
+    color: rgb(65, 178, 216);
+    cursor: pointer;
+}
+
+.bi-linkedin:hover {
+    color: #23527c;
+    cursor: pointer;
+}
+
+/*End of socials*/
+
+.useful-links ul {
+    list-style-type: square;
+}
+
+hr {
+    transition: all 0.5s;
+}
+
+/*Style for cars page*/
+
+select {
+    background-color: #f4f4f4 !important;
+}
+
+#cars-search-btn:hover {
+    color: #4883ff;
+}
+
+/*Contact page design*/
+
+#contact-page-send-btn:hover {
+    color: #4883ff;
+}
+
+#contact-more {
+    background-color: #4883ff;
+    color: white;
+}
+
+#contact-more a {
+    text-decoration: none;
+    color: white;
+}
