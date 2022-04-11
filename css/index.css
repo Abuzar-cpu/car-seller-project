@@ -123,3 +123,22 @@ select {
     text-decoration: none;
     color: white;
 }
+
+/*Log in page design*/
+
+#log-in-button:hover {
+    color: #4883ff;
+}
+
+#register-button:hover {
+    color: #4883ff;
+}
+#log-in-page-main {
+    min-height: 100vh;
+    background-image: url("../assets/images/contact-image-1-1920x700.jpg");
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
