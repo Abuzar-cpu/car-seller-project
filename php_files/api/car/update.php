@@ -23,8 +23,6 @@
 
     $car->id = $data->id;
 
-extracted($data, $car);
-
 if($car->updateCar()) {
     echo json_encode(
         array('message' => 'Car Updated')

@@ -39,7 +39,7 @@ class User
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':password', $this->password);
         $stmt->bindParam(':fullname', $this->fullname);
-        $stmt->bindParam(':status', $this->status);
+        $stmt->bindParam(':status', $this->status);     
 
         // Execute Query
         if($stmt->execute()) {

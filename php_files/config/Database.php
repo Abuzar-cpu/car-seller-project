@@ -5,7 +5,7 @@ class Database
     private $host = "localhost";
     private $db_name = "carseller";
     private $username = "root";
-    private $password = "12345678";
+    private $password = "Abuzar";
     public $conn;
 
     public function dbConnection()

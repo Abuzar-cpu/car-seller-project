@@ -45,6 +45,22 @@ class Car
         return $stmt;
     }
 
+    public function getSingleCar() {
+        // Create Query
+        $query = 'SELECT * FROM ' . $this->table . ' WHERE id=:id AND status=1';
+
+        // Prepare Statement
+        $stmt = $this->prepareStatement($query);
+
+        // Execute query
+        if($stmt->execute([':id' => $this->id])) {
+            if($stmt->rowCount() > 0) {
+                return $stmt;
+            }
+        }
+        return false;
+    }
+
     public function insertCar()
     {
         // Create query
@@ -53,15 +69,11 @@ class Car
         // Prepare statement
         $stmt = $this->prepareStatement($query);
         $this->status = htmlspecialchars(strip_tags($this->status));
-//        $this -> status = htmlspecialchars(strip_tags($this -> status));
-
-        // Bind data
-        $this->bindData($stmt);
-//        $stmt->bindParam(':status', $this->status);
 
         // Execute query
         if ($this->brand && $this->model && $this->year && $this->price && $this->ban_model && $this->color && $this->engine_volume && $this->engine_power && $this->fuel_type) {
-            if ($stmt->execute()) {
+            // Execute takes array as argument and places the values into the query
+            if ($stmt->execute([':brand' => $this->brand, ':model' => $this->model, ':year' => $this->year, ':price' => $this->price, ':ban_model' => $this->ban_model, ':color' => $this->color, ':engine_volume' => $this->engine_volume, ':engine_power' => $this->engine_power, ':fuel_type' => $this->fuel_type])) {
                 return true;
             }
             // Print error if something goes wrong
@@ -105,34 +117,13 @@ class Car
         $stmt = $this->prepareStatement($query);
         $this->id = htmlspecialchars(strip_tags($this->id));
 
-        // Bind data
-        $this->bindData($stmt);
-        $stmt->bindParam(':id', $this->id);
-
         // Execute query
-        if ($stmt->execute()) {
+        if ($stmt->execute([":id" => $this->id, ":brand" => $this->brand, ":model" => $this->model, ":year" => $this->year, ":price" => $this->price, ":ban_model" => $this->ban_model, ":color" => $this->color, ":engine_volume" => $this->engine_volume, ":engine_power" => $this->engine_power, ":fuel_type" => $this->fuel_type])) {
             return true;
         }
         // Print error if something goes wrong
         printf("Error: Fields not filled");
         return false;
-    }
-
-    /**
-     * @param $stmt
-     * @return void
-     */
-    public function bindData($stmt)
-    {
-        $stmt->bindParam(':brand', $this->brand);
-        $stmt->bindParam(':model', $this->model);
-        $stmt->bindParam(':year', $this->year);
-        $stmt->bindParam(':price', $this->price);
-        $stmt->bindParam(':ban_model', $this->ban_model);
-        $stmt->bindParam(':color', $this->color);
-        $stmt->bindParam(':engine_volume', $this->engine_volume);
-        $stmt->bindParam(':engine_power', $this->engine_power);
-        $stmt->bindParam(':fuel_type', $this->fuel_type);
     }
 
     /**
